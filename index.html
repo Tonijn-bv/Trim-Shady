@@ -1,0 +1,209 @@
+<!doctype html>
+<!--
+  Trim Shady · landing page (prototype)
+  Built from the Figma frame "Trim Shady · Landing page · Draft 02 · Light (default)"
+  (file a56UTV2PO87DNn0kcxubo0, node 4075:2). Plain HTML/CSS/JS, no build step:
+  open index.html in a browser, or publish the folder as it is (GitHub Pages).
+
+  Scroll animations: add data-reveal="left" | "right" | "up" to an element and
+  js/main.js slides it in when it scrolls into view.
+  The Vimeo video is set in ONE place: VIMEO_ID at the top of js/main.js.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Prototype for the team: keep it out of search engines until it moves to tonijn.net. -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Trim Shady · An animated typeface for Adobe After Effects</title>
+  <meta name="description" content="Trim Shady is an animated typeface for Adobe After Effects. Type a word, choose your colors and rhythm, and it builds itself as native layers.">
+  <meta property="og:title" content="Trim Shady · An animated typeface for Adobe After Effects">
+  <meta property="og:description" content="Type a word, choose your colors and rhythm, and it builds itself as native layers.">
+  <meta property="og:image" content="img/hero-poster.jpg">
+  <link rel="icon" href="img/do-mark-top.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/Geist-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top bar (sticky) -->
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Trim Shady, back to top">
+      <img src="img/do-mark-top.svg" width="33" height="22" alt="">
+      <span>Trim Shady</span>
+    </a>
+    <nav class="links" aria-label="Sections">
+      <a href="#meet">How it works</a>
+      <a href="#make-it-yours">Features</a>
+      <a href="#alphabet">Alphabet</a>
+      <a href="#in-use">Use cases</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="button" href="#get-it">Get Trim Shady</a>
+  </header>
+
+  <main id="top">
+
+    <!-- 01 Hero: the intro film plays muted in the background (Vimeo). Until a
+         video ID is set, or if Vimeo cannot load, the poster image shows. -->
+    <section class="hero" aria-label="Trim Shady intro film">
+      <div class="hero-media" id="hero-media">
+        <img class="hero-poster" src="img/hero-poster.jpg" width="1920" height="1080" alt="The words TRIM SHADY drawn in the Trim Shady animated typeface">
+      </div>
+    </section>
+
+    <!-- 02 Meet Trim Shady -->
+    <section class="section meet" id="meet">
+      <div class="head" data-reveal="up">
+        <p class="kicker">Meet Trim Shady</p>
+        <h1 class="title">An animated typeface for Adobe After Effects.</h1>
+        <p class="lead">Trim Shady lives in one panel, right next to your comp. Type a word, choose your colors and rhythm, and it builds itself as native layers, ready for any project.</p>
+        <div class="buttons">
+          <a class="button" href="#get-it">Get Trim Shady</a>
+          <a class="button ghost" id="film-link" href="#" target="_blank" rel="noopener">Watch the 60-second film</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Make it yours: four chapters, text and panel screenshots alternate
+         left and right; each side slides in from its own side. -->
+    <section class="section make" id="make-it-yours">
+      <div class="head" data-reveal="up">
+        <p class="kicker">Make it yours</p>
+        <h2 class="title">Make it yours.</h2>
+        <p class="lead narrow">Everything happens in one panel, docked right next to your comp. Here is what it offers.</p>
+      </div>
+
+      <article class="chapter">
+        <div class="chapter-text" data-reveal="left">
+          <p class="number">01</p>
+          <h3>Multiline text input</h3>
+          <p>Type a single word or a full headline. Press Enter for a new line, and every line builds up in its own rhythm.</p>
+          <ul class="points">
+            <li>47 characters: A–Z, 0–9 and 11 symbols</li>
+            <li>Left, center or right aligned</li>
+            <li>The comp is named for you</li>
+          </ul>
+        </div>
+        <div class="chapter-images" data-reveal="right">
+          <img src="img/ui-text.png" width="1162" height="572" alt="The Text group of the Trim Shady panel" loading="lazy">
+        </div>
+      </article>
+
+      <article class="chapter flip">
+        <div class="chapter-images" data-reveal="left">
+          <img src="img/ui-color.png" width="1162" height="550" alt="The Colors group with the four color roles" loading="lazy">
+        </div>
+        <div class="chapter-text" data-reveal="right">
+          <p class="number">02</p>
+          <h3>Color input</h3>
+          <p>Four colors bring every character to life: Main, Accent, Light and Mid. Click a swatch to open the After Effects color picker, or type a hex value.</p>
+          <ul class="points">
+            <li>Optional background color</li>
+            <li>Colors stay editable as Essential Properties</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="chapter">
+        <div class="chapter-text" data-reveal="left">
+          <p class="number">03</p>
+          <h3>Layout</h3>
+          <p>Shape the word to fit your frame. Size, tracking, word space and line spacing each have their own slider, and Align sets every line left, center or right.</p>
+          <p>Then fine-tune by eye. Every letter has its own kerning slider, so a single character can sit a little closer or further away. It all stays live in Essential Graphics, ready to keyframe.</p>
+          <ul class="points">
+            <li>Size, tracking, word space and line spacing</li>
+            <li>Kerning for every single letter</li>
+            <li>Keyframe any control in Essential Graphics</li>
+          </ul>
+        </div>
+        <div class="chapter-images" data-reveal="right">
+          <img src="img/ui-layout.png" width="1162" height="700" alt="The Layout group with its sliders" loading="lazy">
+        </div>
+      </article>
+
+      <article class="chapter flip">
+        <div class="chapter-images stack" data-reveal="left">
+          <img src="img/ui-build-up.png" width="1162" height="550" alt="The Build-up group" loading="lazy">
+          <img src="img/ui-hold.png" width="1162" height="350" alt="The Hold group" loading="lazy">
+          <img src="img/ui-disappear.png" width="1162" height="550" alt="The Disappear group" loading="lazy">
+        </div>
+        <div class="chapter-text" data-reveal="right">
+          <p class="number">04</p>
+          <h3>Timing</h3>
+          <p>Direct the rhythm in three moves. Build-up sets how the letters arrive and in which order. Hold keeps the word alive on screen. Disappear lets it leave with its own stagger, or stay.</p>
+          <ul class="points">
+            <li>Uniform or natural timing</li>
+            <li>Left to right, right to left, center out or random</li>
+            <li>Exit on or off</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- Full-width photo: Trim Shady at work -->
+    <section class="photo" id="in-use" aria-label="Trim Shady at work">
+      <img src="img/photo-studio.jpg" width="2400" height="1800" alt="Trim Shady at work in After Effects on a studio screen" loading="lazy" data-reveal="up">
+    </section>
+
+    <!-- 04 The alphabet -->
+    <section class="section alphabet" id="alphabet">
+      <div class="head" data-reveal="up">
+        <p class="kicker"><span class="kicker-num">04</span>The alphabet</p>
+        <h2 class="title">47 characters, one animated typeface.</h2>
+        <p class="lead narrow">Letters, numbers and punctuation, ready for your headlines.</p>
+      </div>
+      <img class="alphabet-img" src="img/alphabet.jpg" width="1920" height="1080" alt="All 47 characters of the Trim Shady alphabet: A to Z, 0 to 9 and 11 symbols" loading="lazy" data-reveal="up">
+    </section>
+
+    <!-- 05 Get it: the sign-up form (Kit) comes here in the next step. -->
+    <section class="section get" id="get-it">
+      <div class="head center" data-reveal="up">
+        <p class="kicker"><span class="kicker-num">05</span>Get it</p>
+        <h2 class="title">Trim Shady. Please sign up.</h2>
+      </div>
+      <div class="signup" id="signup" data-reveal="up">
+        <!-- Placeholder until the Kit form is embedded. -->
+        <a class="button" href="#signup">Please sign up.</a>
+      </div>
+    </section>
+
+    <!-- 06 Made by Tonijn (ink band) -->
+    <section class="section tonijn" aria-labelledby="tonijn-kicker">
+      <img class="tonijn-mark" src="img/do-mark-tonijn.svg" width="96" height="64" alt="" data-reveal="left">
+      <div class="tonijn-copy" data-reveal="right">
+        <p class="kicker" id="tonijn-kicker"><span class="kicker-num">06</span>Made by Tonijn</p>
+        <p class="statement">Tonijn is a design studio that shapes communication across screen and space. Trim Shady started as our own tool, trimmed and animated one path at a time, and we made it for everyone who wants their headlines to move.</p>
+        <p class="signature"><em>creative.</em><strong>COMMITTED.</strong></p>
+      </div>
+    </section>
+
+    <!-- 07 FAQ -->
+    <section class="section faq" id="faq">
+      <div class="head" data-reveal="up">
+        <p class="kicker"><span class="kicker-num">07</span>FAQ</p>
+        <h2 class="title">Questions, answered.</h2>
+      </div>
+      <dl class="faq-list" data-reveal="up">
+        <div><dt>Does it work without other plugins?</dt><dd>Yes. Everything is native to After Effects.</dd></div>
+        <div><dt>Can I edit the result by hand?</dt><dd>Yes. Every word is made of native shape layers and precomps.</dd></div>
+        <div><dt>Which characters are included?</dt><dd>A–Z, 0–9 and 11 symbols, in an uppercase display style.</dd></div>
+        <div><dt>Can I use it in commercial work?</dt><dd class="tbd">License terms follow with the pricing.</dd></div>
+        <div><dt>Which After Effects versions are supported?</dt><dd class="tbd">To be confirmed after the team test round.</dd></div>
+        <div><dt>Where do I get support?</dt><dd class="tbd">Support channel to be decided.</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <img src="img/do-mark-footer.svg" width="36" height="24" alt="">
+      <p>Trim Shady by Tonijn &nbsp;·&nbsp; <a href="https://tonijn.net">tonijn.net</a> &nbsp;·&nbsp; Contact &nbsp;·&nbsp; Legal</p>
+    </div>
+    <p class="signature small"><em>creative.</em><strong>COMMITTED.</strong></p>
+  </footer>
+  <div class="bottom-bar" aria-hidden="true"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
