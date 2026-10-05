@@ -133,6 +133,37 @@ h1, h2, h3, p, ul, dl, dd { margin: 0; }
 /* ---- Get it -------------------------------------------------------------- */
 .get { display: flex; flex-direction: column; align-items: center; gap: 44px; }
 
+/* Sign-up form (Kit). Pill-shaped field and button, like the page's buttons. */
+.signup { width: 100%; max-width: 620px; }
+.signup-fields { display: flex; gap: 12px; }
+.signup .formkit-input {
+  flex: 1 1 auto; min-width: 0;
+  padding: 15px 24px;
+  border: 1px solid rgba(1, 21, 29, 0.28); border-radius: 999px;
+  background: #f6f5ec; color: var(--ink);
+  font: 400 17px/1.2 var(--sans);
+}
+.signup .formkit-input::placeholder { color: var(--grey); opacity: 1; }
+.signup .formkit-input:focus { outline: 2px solid var(--green); outline-offset: 2px; border-color: var(--green); }
+.signup .formkit-submit { position: relative; border: 0; cursor: pointer; flex: none; }
+.signup-note { margin-top: 14px; text-align: center; font-size: 14px; color: var(--grey); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Kit's messages: errors and the success message appear in this list. */
+.signup .formkit-alert { list-style: none; margin: 0 0 16px; padding: 14px 20px; border-radius: 16px; text-align: center; font-size: 16px; }
+.signup .formkit-alert:empty { display: none; }
+.signup .formkit-alert-error { background: rgba(182, 53, 8, 0.08); color: var(--coral-deep); }
+.signup .formkit-alert-success { background: rgba(68, 153, 100, 0.14); color: #2d6b44; font-weight: 700; }
+
+/* Kit's loading dots inside the button while the address is sent. */
+.signup .formkit-spinner { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; gap: 6px; }
+.signup .formkit-spinner span { width: 8px; height: 8px; border-radius: 50%; background: var(--paper); animation: signup-dot 1.4s infinite ease-in-out both; }
+.signup .formkit-spinner span:nth-child(1) { animation-delay: -0.32s; }
+.signup .formkit-spinner span:nth-child(2) { animation-delay: -0.16s; }
+.signup .formkit-submit[data-active] .formkit-spinner { display: flex; }
+.signup .formkit-submit[data-active] .label { visibility: hidden; }
+@keyframes signup-dot { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+
 /* ---- Made by Tonijn (ink band) ------------------------------------------- */
 .tonijn { display: flex; gap: 64px; align-items: flex-start; background: var(--ink); color: var(--paper); border-top: 0; }
 .tonijn-mark { flex: none; }
@@ -193,6 +224,7 @@ h1, h2, h3, p, ul, dl, dd { margin: 0; }
   .footer { flex-direction: column; align-items: flex-start; }
   .signature.small { align-items: flex-start; }
   .topbar .button { padding: 12px 18px; }
+  .signup-fields { flex-direction: column; }
   /* On phones, slide everything in from below: side slides look cramped. */
   .js [data-reveal="left"], .js [data-reveal="right"] { transform: translateY(40px); }
 }
