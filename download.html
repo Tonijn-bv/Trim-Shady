@@ -1,9 +1,11 @@
 <!doctype html>
 <!--
   Trim Shady · download page ("thank you" page)
-  Kit sends new subscribers here after they click the confirmation link in the
-  incentive email (form 10005065 → Settings → Incentive → redirect URL). This
-  works on Kit's FREE plan: no sequence or automation needed (2026-10-05).
+  New subscribers land here right after signing up: the form on index.html
+  redirects here (after_subscribe in its data-options), and so does Kit's own
+  hosted form (form 10005065 → Settings → General → Redirect to an external
+  page). Works on Kit's FREE plan: no sequence or automation needed. Kit's
+  confirmation email (double opt-in) is only for the news list (2026-10-05).
 
   The download link is set in ONE place: the button after the DOWNLOAD_URL
   comment below. It is the Dropbox link of dist/TrimShady-<version>.zip with dl=1.
@@ -29,9 +31,9 @@
 
   <main class="section download">
     <div class="head center">
-      <p class="kicker">You're in</p>
+      <p class="kicker">You're signed up</p>
       <h1 class="title">Thanks! Here is Trim Shady.</h1>
-      <p class="lead">Your email is confirmed. Download the package, unzip it and open "Read Me First".</p>
+      <p class="lead">Download the package, unzip it and open "Read Me First". We've also sent you a short email: confirm it to get the occasional Trim Shady news.</p>
       <!-- DOWNLOAD_URL -->
       <a class="button big" id="download-button" href="https://www.dropbox.com/scl/fi/tzwf8r9dwllsvyt21k08g/TrimShady-0.3.0.zip?rlkey=trsbyxf6iplv54nxd16krt4yn&amp;dl=1">Download Trim Shady 0.3.0</a>
       <p class="small-note">Zip file, about 1 MB · macOS and Windows · After Effects 2021 or later</p>

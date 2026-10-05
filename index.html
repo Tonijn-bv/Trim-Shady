@@ -165,14 +165,16 @@
            replaced by ours, but the attributes Kit's script (ck.5.js) relies on are
            kept: class "formkit-form", data-sv-form, data-uid, data-options and the
            data-element="errors | fields | submit" parts. The script then sends the
-           address without leaving the page and shows Kit's success message in the
-           "errors" list (as a .formkit-alert-success item). Without JavaScript the
-           form still posts to Kit directly. Double opt-in: Kit emails a
-           confirmation link. Settings (success text, tag) live in Kit, not here. -->
+           address and then sends the visitor to download.html (after_subscribe =
+           redirect, in data-options below; this copy OVERRIDES the form's settings
+           in Kit, so keep both the same). Errors show in the "errors" list. Without
+           JavaScript the form posts to Kit directly and Kit's own setting applies
+           (General → redirect to the same page). Kit also emails a confirmation
+           link (double opt-in) for the news list. -->
       <div class="signup" id="signup" data-reveal="up">
         <form class="formkit-form signup-form" action="https://app.kit.com/forms/10005065/subscriptions" method="post"
               data-sv-form="10005065" data-uid="9677f10a05" data-format="inline" data-version="5"
-              data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Thanks! Now check your inbox to confirm your sign-up.","redirect_url":""},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'>
+              data-options='{"settings":{"after_subscribe":{"action":"redirect","success_message":"Thanks! Taking you to the download.","redirect_url":"https://tonijn-bv.github.io/Trim-Shady/download.html"},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'>
           <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
           <div class="signup-fields formkit-fields" data-element="fields" data-stacked="false">
             <label class="visually-hidden" for="signup-email">Email address</label>
@@ -182,7 +184,7 @@
               <span class="label">Please sign up.</span>
             </button>
           </div>
-          <p class="signup-note">Sign up and we'll email you the free download, plus the occasional Trim Shady news. No spam, unsubscribe at any time. <a href="privacy.html">Privacy notice</a></p>
+          <p class="signup-note">Sign up and get the free download right away, plus the occasional Trim Shady news. No spam, unsubscribe at any time. <a href="privacy.html">Privacy notice</a></p>
         </form>
       </div>
     </section>
