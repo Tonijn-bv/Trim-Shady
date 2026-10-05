@@ -198,6 +198,26 @@ h1, h2, h3, p, ul, dl, dd { margin: 0; }
 .legal .back { margin-top: 24px; }
 .signup-note a { color: inherit; text-underline-offset: 3px; }
 
+/* ---- Download page (download.html) ---------------------------------------- */
+.download { border-top: 0; padding-top: 80px; display: flex; flex-direction: column; align-items: center; gap: 48px; }
+.download .head { gap: 22px; }
+.download .lead { max-width: 640px; }
+.button.big { padding: 22px 40px; font-size: 15px; }
+.small-note { font-size: 14px; color: var(--grey); line-height: 1.6; }
+.small-note.center { text-align: center; max-width: 640px; }
+.small-note a, .install-steps a { color: var(--ink); text-underline-offset: 3px; }
+.install-steps {
+  counter-reset: step; list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; width: 100%;
+}
+.install-steps li {
+  counter-increment: step; padding: 28px 24px 24px; border-top: 1px solid var(--line);
+  font: 400 18px/1.5 var(--serif); color: var(--grey);
+}
+.install-steps li::before { content: "0" counter(step); display: block; margin-bottom: 12px; font: 900 16px var(--sans); letter-spacing: 0.06em; color: var(--coral-deep); }
+.install-steps strong { color: var(--ink); }
+@media (max-width: 800px) { .install-steps { grid-template-columns: 1fr; } }
+
 /* ---- Footer -------------------------------------------------------------- */
 .footer {
   display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;

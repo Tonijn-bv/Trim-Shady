@@ -1,0 +1,59 @@
+<!doctype html>
+<!--
+  Trim Shady · download page ("thank you" page)
+  Kit sends new subscribers here after they click the confirmation link in the
+  incentive email (form 10005065 → Settings → Incentive → redirect URL). This
+  works on Kit's FREE plan: no sequence or automation needed (2026-10-05).
+
+  The download link is set in ONE place: the button after the DOWNLOAD_URL
+  comment below. It is the Dropbox link of dist/TrimShady-<version>.zip with dl=1.
+  New version: overwrite the zip in Dropbox under the same name to keep the
+  link, or paste the new link here and publish (tools/publish-landing.sh).
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Download · Trim Shady</title>
+  <link rel="icon" href="img/do-mark-top.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Trim Shady, back to the home page">
+      <img src="img/do-mark-top.svg" width="33" height="22" alt="">
+      <span>Trim Shady</span>
+    </a>
+  </header>
+
+  <main class="section download">
+    <div class="head center">
+      <p class="kicker">You're in</p>
+      <h1 class="title">Thanks! Here is Trim Shady.</h1>
+      <p class="lead">Your email is confirmed. Download the package, unzip it and open "Read Me First".</p>
+      <!-- DOWNLOAD_URL -->
+      <a class="button big" id="download-button" href="https://www.dropbox.com/scl/fi/tzwf8r9dwllsvyt21k08g/TrimShady-0.3.0.zip?rlkey=trsbyxf6iplv54nxd16krt4yn&amp;dl=1">Download Trim Shady 0.3.0</a>
+      <p class="small-note">Zip file, about 1 MB · macOS and Windows · After Effects 2021 or later</p>
+    </div>
+
+    <ol class="install-steps">
+      <li><strong>Unzip</strong> the download and open <strong>Read Me First</strong>.</li>
+      <li>Get the free <a href="https://aescripts.com/learn/zxp-installer/">aescripts ZXP Installer</a>, quit After Effects, and drag the <strong>.zxp</strong> file onto it.</li>
+      <li>Start After Effects and open <strong>Window &gt; Extensions &gt; Trim Shady</strong>. Type a word and click Build.</li>
+    </ol>
+
+    <p class="small-note center">Made something with it? Found a bug, or have an idea? Reply to the email you got from us. We would love to see it.<br>
+      Free to use, also for client work: see License.txt in the package. <a href="privacy.html">Privacy notice</a></p>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <img src="img/do-mark-footer.svg" width="36" height="24" alt="">
+      <p>Trim Shady by Tonijn &nbsp;·&nbsp; <a href="https://tonijn.net">tonijn.net</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy</a></p>
+    </div>
+    <p class="signature small"><em>creative.</em><strong>COMMITTED.</strong></p>
+  </footer>
+  <div class="bottom-bar" aria-hidden="true"></div>
+</body>
+</html>
