@@ -10,7 +10,7 @@
 // https://vimeo.com/123456789. Empty = the hero shows its poster image and the
 // film button stays inactive. (A private "unlisted" link has a second part,
 // e.g. https://vimeo.com/123456789/abcdef1234: put that part in VIMEO_HASH.)
-const VIMEO_ID = "";       // TODO: the real intro film
+const VIMEO_ID = "1233022742";   // "Trim Shady" intro film (public, Vimeo Plus: background mode allowed)
 const VIMEO_HASH = "";
 
 document.documentElement.classList.add("js");
