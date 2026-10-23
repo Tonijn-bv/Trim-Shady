@@ -20,7 +20,9 @@
   --ink-85: rgba(1, 21, 29, 0.85);
   --ink-80: rgba(1, 21, 29, 0.8);
 
-  --gutter: clamp(20px, 8.333vw, 120px);   /* 120 px at 1440 */
+  /* Side margin: 120 px at 1440 (Figma). Wider screens keep a centred 1200 px content
+     column, so the extra space is shared left and right (50% = half the page width). */
+  --gutter: max(clamp(20px, 8.333vw, 120px), calc(50% - 600px));
   --max: 1440px;
   --sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
   --serif: Georgia, "Times New Roman", serif;
@@ -197,7 +199,10 @@ h1, h2, h3, p, ul, dl, dd { margin: 0; }
 .faq-list dd.tbd { font: italic 18px/1.5 var(--serif); color: var(--grey); }
 
 /* ---- Privacy notice (privacy.html) ---------------------------------------- */
-.legal { max-width: 900px; padding-top: 64px; border-top: 0; display: flex; flex-direction: column; gap: 18px; }
+.legal { padding-top: 64px; border-top: 0; display: flex; flex-direction: column; gap: 18px; }
+/* Text column: left edge on the page's content column (like every section), and the
+   same width as before (900 px box minus 2 × 120 px margin = 660 px). */
+.legal > * { max-width: 660px; }
 .legal .title { margin-bottom: 4px; }
 .legal .updated { font-size: 14px; color: var(--grey); }
 .legal h2 { margin-top: 28px; font: 700 26px/1.2 var(--sans); }
