@@ -3,6 +3,7 @@
    1. Hero video: the intro film from Vimeo, muted, looping, in the background.
    2. "Watch the 60-second film": opens the same film on Vimeo, with sound.
    3. Scroll reveal: elements with data-reveal slide in when they come into view.
+   4. Menu on smaller screens: the hamburger opens and closes the section links.
    --------------------------------------------------------------------------- */
 
 // ---- Settings ---------------------------------------------------------------
@@ -57,4 +58,36 @@ document.documentElement.classList.add("js");
     });
   }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
   items.forEach((el) => observer.observe(el));
+})();
+
+// ---- 4. Menu on smaller screens (hamburger) -------------------------------------
+// The button only shows below 1100 px (css "Smaller screens"). It opens the menu
+// under the top bar; a link, Escape or a tap outside closes it again.
+(function setUpMenu() {
+  const bar = document.querySelector(".topbar");
+  const toggle = bar && bar.querySelector(".menu-toggle");
+  const nav = bar && bar.querySelector(".links");
+  if (!toggle || !nav) return;
+
+  function setOpen(open) {
+    bar.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Menu");
+  }
+
+  toggle.addEventListener("click", () => setOpen(!bar.classList.contains("is-open")));
+  nav.addEventListener("click", (event) => {
+    if (event.target.closest("a")) setOpen(false);   // the page then scrolls to the section
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && bar.classList.contains("is-open")) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+  document.addEventListener("click", (event) => {
+    if (bar.classList.contains("is-open") && !bar.contains(event.target)) setOpen(false);
+  });
+  // Back to a wide screen: make sure the menu is not left in the "open" state
+  window.matchMedia("(min-width: 1101px)").addEventListener("change", (e) => { if (e.matches) setOpen(false); });
 })();

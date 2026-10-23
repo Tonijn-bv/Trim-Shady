@@ -22,6 +22,7 @@
   <meta property="og:image" content="img/hero-poster.jpg">
   <link rel="icon" href="img/do-mark-top.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/Geist-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <script>document.documentElement.classList.add("js");</script><!-- early, so the phone menu does not flash open -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -32,13 +33,18 @@
       <img src="img/do-mark-top.svg" width="33" height="22" alt="">
       <span>Trim Shady</span>
     </a>
-    <nav class="links" aria-label="Sections">
+    <nav class="links" id="site-nav" aria-label="Sections">
       <a href="#meet">How it works</a>
       <a href="#make-it-yours">Features</a>
       <a href="#alphabet">Alphabet</a>
+      <a href="#get-it">Get it</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a class="button" href="#get-it">Get Trim Shady</a>
+    <!-- Hamburger: only shown on smaller screens (see css "Smaller screens"); js/main.js opens/closes the menu -->
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <span class="menu-toggle-bar"></span><span class="menu-toggle-bar"></span><span class="menu-toggle-bar"></span>
+    </button>
   </header>
 
   <main id="top">
@@ -148,7 +154,7 @@
     <!-- 04 The alphabet -->
     <section class="section alphabet" id="alphabet">
       <div class="head" data-reveal="up">
-        <p class="kicker"><span class="kicker-num">04</span>The alphabet</p>
+        <p class="kicker">The alphabet</p>
         <h2 class="title">47 characters, one animated typeface.</h2>
         <p class="lead narrow">Letters, numbers and punctuation, ready for your headlines.</p>
       </div>
@@ -158,7 +164,7 @@
     <!-- 05 Get it: the sign-up form (Kit) comes here in the next step. -->
     <section class="section get" id="get-it">
       <div class="head center" data-reveal="up">
-        <p class="kicker"><span class="kicker-num">05</span>Get it</p>
+        <p class="kicker">Get it</p>
         <h2 class="title">Trim Shady. Please sign up.</h2>
       </div>
       <!-- Kit (ConvertKit) inline form 10005065. Kit's own markup and styles are
@@ -193,7 +199,7 @@
     <section class="section tonijn" aria-labelledby="tonijn-kicker">
       <img class="tonijn-mark" src="img/do-mark-tonijn.svg" width="96" height="64" alt="" data-reveal="left">
       <div class="tonijn-copy" data-reveal="right">
-        <p class="kicker" id="tonijn-kicker"><span class="kicker-num">06</span>Made by Tonijn</p>
+        <p class="kicker" id="tonijn-kicker">Made by Tonijn</p>
         <p class="statement">Tonijn is a design studio that shapes communication across screen and space. Trim Shady started as our own tool, trimmed and animated one path at a time, and we made it for everyone who wants their headlines to move.</p>
         <p class="signature"><em>creative.</em><strong>COMMITTED.</strong></p>
       </div>
@@ -202,7 +208,7 @@
     <!-- 07 FAQ -->
     <section class="section faq" id="faq">
       <div class="head" data-reveal="up">
-        <p class="kicker"><span class="kicker-num">07</span>FAQ</p>
+        <p class="kicker">FAQ</p>
         <h2 class="title">Questions, answered.</h2>
       </div>
       <dl class="faq-list" data-reveal="up">
