@@ -1,31 +1,25 @@
 /* ---------------------------------------------------------------------------
    Trim Shady · landing page script
    1. Hero video: the intro film from Vimeo, muted, looping, in the background.
-   2. "Watch the 60-second film": opens the same film on Vimeo, with sound.
+   2. (The "Watch the introduction video" button links to YouTube straight from
+      index.html since 2026-10-29; this script no longer sets it.)
    3. Scroll reveal: elements with data-reveal slide in when they come into view.
    4. Menu on smaller screens: the hamburger opens and closes the section links.
    --------------------------------------------------------------------------- */
 
 // ---- Settings ---------------------------------------------------------------
 // The Vimeo video ID: the number at the end of the link, e.g. 123456789 for
-// https://vimeo.com/123456789. Empty = the hero shows its poster image and the
-// film button stays inactive. (A private "unlisted" link has a second part,
+// https://vimeo.com/123456789. Empty = the hero shows its poster image. (A private "unlisted" link has a second part,
 // e.g. https://vimeo.com/123456789/abcdef1234: put that part in VIMEO_HASH.)
 const VIMEO_ID = "1233022742";   // "Trim Shady" intro film (public, Vimeo Plus: background mode allowed)
 const VIMEO_HASH = "";
 
 document.documentElement.classList.add("js");
 
-// ---- 1 + 2. Vimeo -------------------------------------------------------------
+// ---- 1. Vimeo -----------------------------------------------------------------
 (function setUpFilm() {
   const media = document.getElementById("hero-media");
-  const link = document.getElementById("film-link");
-  if (!VIMEO_ID) {
-    link.setAttribute("aria-disabled", "true");
-    link.title = "The film is coming soon";
-    link.addEventListener("click", (e) => e.preventDefault());
-    return;
-  }
+  if (!VIMEO_ID) { return; }
   // background=1: Vimeo's background mode (autoplay, muted, looped, no controls).
   const hash = VIMEO_HASH ? "&h=" + VIMEO_HASH : "";
   const iframe = document.createElement("iframe");
@@ -37,8 +31,6 @@ document.documentElement.classList.add("js");
   // Fade the poster out once the player has loaded (the poster stays as fallback).
   iframe.addEventListener("load", () => setTimeout(() => media.classList.add("playing"), 800));
   media.appendChild(iframe);
-
-  link.href = "https://vimeo.com/" + VIMEO_ID + (VIMEO_HASH ? "/" + VIMEO_HASH : "");
 })();
 
 // ---- 3. Scroll reveal ---------------------------------------------------------
